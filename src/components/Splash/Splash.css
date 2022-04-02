@@ -1,0 +1,36 @@
+
+.splash-container {
+    background-image: url(https://i.imgur.com/qbOgTye.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+
+}
+
+.welcome-text {
+    background-color: rgba(200, 200, 200, 0.5);
+    text-align: center;
+    width: 700px;
+    margin: auto;
+    border-radius: 4px;
+
+
+}
+
+.welcome-text h1 {
+    font-weight: 600;
+    font-size: xx-large;
+}
+
+.welcome-text button {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 3px 5px;
+    border-radius: 4px;
+    background-color: slategray;
+}
+
+.welcome-text button:hover {
+    background-color: black;
+    color: slategray;
+}
