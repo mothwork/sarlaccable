@@ -15,12 +15,13 @@
 
 .person-container {
     max-width:auto;
+    max-height: 300px;
     min-height:300px;
     background-color: white;
     color: white;
     padding: 20px;
     /* border: 1px solid black; */
-    overflow: hidden;
+    overflow: scroll;
     border-radius: 2px;
     background-color: gray;
 
@@ -34,14 +35,14 @@
 .edible {
     text-align: center;
 
-    font-size: 60px;
+    font-size: 50px;
     color: yellowgreen;
 }
 
 .inedible {
     text-align: center;
 
-    font-size: 60px;
+    font-size: 50px;
     color: darkred;
 }
 

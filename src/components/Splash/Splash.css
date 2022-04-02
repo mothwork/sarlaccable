@@ -12,19 +12,22 @@
     text-align: center;
     width: 700px;
     margin: auto;
-    border-radius: 4px;
 
+    border-radius: 4px;
+    font-size: larger;
+    color: white;
 
 }
 
+
 .welcome-text h1 {
     font-weight: 600;
-    font-size: xx-large;
+    font-size: 80px;
 }
 
 .welcome-text button {
     border: 1px solid black;
-    margin: 5px;
+    margin: 15px;
     padding: 3px 5px;
     border-radius: 4px;
     background-color: slategray;

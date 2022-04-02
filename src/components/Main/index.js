@@ -11,8 +11,27 @@ const Main = () => {
         const getPeople = async () => {
             let res = await fetch('https:/swapi.dev/api/people/')
             if (res.ok) {
-                const people = await res.json()
-                setPeopleArray(people.results)
+                let people = await res.json()
+
+                let results = people.results
+
+                let next = people.next
+                console.log(next)
+                while(next !== null){
+                    let res = await fetch(next)
+                    console.log(res)
+                    if (res.ok) {
+                        let nextPeople = await res.json()
+                        console.log(nextPeople)
+
+                        results = results.concat(nextPeople["results"])
+
+                        next = nextPeople.next
+                    }
+
+                }
+                console.log(results)
+                setPeopleArray(results)
             } else {
                 console.log('SWAPI is busy')
             }

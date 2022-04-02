@@ -6,7 +6,8 @@ export const sarlaccability = (obj, type) => {
         default:
             return null
         case 'person':
-            if (obj.height > 200 || obj.mass > 200 || obj.name === 'Boba Fett') return false
+
+            if (obj.height > 200 || obj.mass > 200 || obj.name === 'Boba Fett' || obj.name === "Jabba Desilijic Tiure") return false
             return true
         case 'starship':
             if (obj.length > 4) return false
