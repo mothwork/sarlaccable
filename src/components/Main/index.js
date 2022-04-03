@@ -4,41 +4,41 @@ import './People.css'
 
 const Main = () => {
 
-    const [peopleArray, setPeopleArray] = useState()
+    const [peopleArray, setPeopleArray] = useState();
 
     useEffect(() => {
+
+        // This will get all the people from SWAPI
+        // It iterates through the paged sections of the returned JSON and Concats the results together.
         const getPeople = async () => {
             let res = await fetch('https:/swapi.dev/api/people/')
             if (res.ok) {
-                let people = await res.json()
+                let people = await res.json();
 
-                let results = people.results
+                let results = people.results;
 
-                let next = people.next
-                console.log(next)
+                let next = people.next;
+
                 while(next !== null){
-                    let res = await fetch(next)
-                    console.log(res)
+                    let res = await fetch(next);
+
                     if (res.ok) {
-                        let nextPeople = await res.json()
-                        console.log(nextPeople)
+                        let nextPeople = await res.json();
 
-                        results = results.concat(nextPeople["results"])
+                        results = results.concat(nextPeople["results"]);
 
-                        next = nextPeople.next
-                    }
+                        next = nextPeople.next;
+                    };
 
-                }
-                console.log(results)
-                setPeopleArray(results)
+                };
+
+                setPeopleArray(results);
             } else {
-                console.log('SWAPI is busy')
-            }
-        }
-        getPeople()
+                console.log('SWAPI is busy');
+            };
+        };
+        getPeople();
     }, [])
-
-
 
 
     if (peopleArray) {
